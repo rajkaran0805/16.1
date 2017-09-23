@@ -1,0 +1,47 @@
+BMI=function (w,h) #Function BMI Calculates BMI
+{
+  cat("........BMI CALCULATOR.......")
+  repeat
+  {
+    input =readline(prompt = "INPUT SELECTION\n
+                    Enter 1 for Kilograms & Metres \n 
+                    Enter 2 for Pounds & Inches")
+    input=as.integer(input)
+    w=readline(prompt = "Enter your Weight: ") 
+    w=as.numeric(w)
+    h=readline(prompt = "Enter your Height: ")
+    h=as.numeric(h)
+    if (input==1) 
+    {b<<-(w/(h^2))
+    return(b)}
+    else if (input==2)
+    {b<<-(w/(h^2))*703
+    return(b)}
+    else
+      print("Enter a valid number")
+  }
+}
+BMIcategory=function(b) #Function to categorize the BMI
+{
+  BMI(w,h)
+  while(b>0){
+    if(b<15)
+    {return(c("Your BMI is",b," very severely underweight !"))}
+    else if(b<16)
+    {return(c("Your BMI is",b,"Severely underweight !"))}
+    else if(b<18.5)
+    {return(c("Your BMI is",b,"Underweight !"))}
+    else if(b<25)
+    {return(c("Your BMI is",b,"Normal (Healthy weight) !")) }
+    else if(b<30)
+    {return(c("Your BMI is",b,"Overweight !"))}
+    else if(b<35)
+    {return(c("Your BMI is",b,"Obese Class 1 (Moderately obese) !")) }
+    else if(b<40)
+    {return(c("Your BMI is",b,"Obese Class 2 (Severely obese) !")) }
+    else if(b>40)
+    {return(c("Your BMI is",b,"Obese Class 3 (Very severely obese) !"))}
+  } 
+}
+
+BMIcategory(b) # We need to Run this func only. Func  to calculate BMI is called inside of this one.
